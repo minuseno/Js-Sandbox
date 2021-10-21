@@ -3,7 +3,7 @@ let My = {name:myName, age:44, predstavSa: function(){ return 'My name is "'+thi
 // console.log(myName.lastname);
 // console.log(My.name.firstname + ' '+ My.name.lastname + ' ' + My.age);
 
-let pole1 = document.getElementById('PrintOut1');
+let pole1 = document.getElementById('myID');
 let pole2 = document.getElementById('PrintOut2');
 let pole3 = document.getElementById('PrintOut3');
 
@@ -14,7 +14,7 @@ pole2.innerText = myJSONstring + " type of: " + typeof(myJSONstring);
 console.log(myJSONstring);
 
 let myJSONobject = JSON.parse(myJSONstring);
-pole3.innerText = myJSONobject + " type of: " + typeof(myJSONobject);
+pole3.innerText = myJSONobject.name.firstname;
 console.log(myJSONobject);
 
 
