@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html onclick="console.log(event.type,' on html');" onmouseover="console.log(event.type,' on html');">
+
+<head onclick="console.log(event.type,' on head');" onmouseover="console.log(event.type,' on head');">
+    <title onclick="console.log(event.type,' on title');" onmouseover="console.log(event.type,' on title');">Event
+        Propagation</title>
+</head>
+
+<body onclick="console.log(event.type,' on body');" onmouseover="console.log(event.type,' on body');">
+    <div onclick="console.log(event.type,' on div');" onmouseover="console.log(event.type,' on div');">
+        <span onclick="console.log(event.type,' on span');" onmouseover="console.log(event.type,' on span');">Click here
+        </span>
+    </div>
+</body>
+
+</html>

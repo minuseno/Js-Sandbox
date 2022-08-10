@@ -1,10 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>javaScript SANDBOX</title>
 </head>
-<body>
-$END$
+
+<body onload="(()  => {alert(event.type+' Happend !!!');})();">
+    <h1>JavaScript Sandbox</h1>
+    <p data-testid="text1">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Fugiat iste repellendus asperiores,
+        laborum consequatur minima sint tenetur beatae? Expedita minima beatae, voluptates inventore magnam incidunt
+        maiores
+        adipisci explicabo quo maxime?</p>
+    <p id="myID">Bla Bla Bla</p>
+    <div>My New Text...</div>
+    <img src="Image1.jpg" id="myPICTURE"></p>
+    <p id="PrintOut2">Bla Bla Bla</p>
+    <p class="myClass" id="PrintOut3">Bla Bla Bla</p>
+    <script src="script.js"></script>
+
+    <button type="button" id="myButton">Show current date</button>
+
+    <h3 id="PrintOut4">Bla Bla Bla</h3>
+    <script src="fibbonachi.js"></script>
+
+    <h4 class="myClass">Pokusny Text</h4>
+    <script src="promises.js"></script>
+
+    <select id="colours">
+        <option value="red">red</option>
+        <option value="yellow">yellow</option>
+        <option value="blue">blue</option>
+    </select>
+    <div id="displayColour"></div>
+    <script>
+        var colours = document.getElementById('colours');
+        colours.onchange = function () {
+            document.getElementById('displayColour').innerHTML = '<span style="color: ' + this.value + '">' + this.value + '</span>';
+        };
+    </script>
+
+    <div id="quantity">10</div>
+    <br>
+    <input type="radio" name="pet" value="cat"> Cat
+    <br>
+    <input type="radio" name="pet" value="dog"> Dog
+    <br>
+    <div class="myClass">
+        <img class="my2Class" src="img1.jpg"> <br>
+        <img src="img2.jpg">
+    </div>
+    <p id="note">A small <b>portion</b> of the content.</p>
+
+
 </body>
+
 </html>

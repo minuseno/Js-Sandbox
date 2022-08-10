@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>The document.write() after the page has been loaded</title>
 </head>
 <body>
-$END$
+  <div>This text won't be visible!
+            <script>
+                window.onload = function(){
+                    document.write('This text overwrites the entire page content.');
+                };
+            </script>
+        </div>
 </body>
 </html>

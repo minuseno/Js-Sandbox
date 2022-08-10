@@ -1,0 +1,9 @@
+Synchronous responses: The open() method of the XMLHttpRequest object has an optional, third parameter.
+An example of synchronous response below:
+httpRequest.open('GET', 'getProduct/?id=1');
+Is it correct?
+it wasn't meant to be:
+httpRequest.open('GET', 'getProduct/?id=1', false);
+?!?S
+
+https://www.javascriptinstitute.org/javascript-tutorial/ajax/

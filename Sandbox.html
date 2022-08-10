@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javaScript SANDBOX</title>
+    <style>
+        code {
+            font-family: Consolas, "courier new";
+            background-color: #f1f1f1;
+            padding: 2px;
+            font-size: 75%;
+        }
+    </style>
+    <script>
+        function fullFillHTML() { myInnerPageElement.innerHTML = myElement.value; }
+    </script>
+</head>
+
+<body>
+    <h1>JavaScript GRAPHICS Sandbox</h1>
+    <div>
+        <form>
+            <label>HTML Code:</label>
+            <input id="myInputField" type="text" size="100"
+                value="&lt;iframe src=&quot;https://www.javascriptinstitute.org/javascript-tutorial/graphics/&quot; width=&quot;100%&quot; height=&quot;500px&quot;/&gt;">
+            <input id="myInputButton" type="button" value="Insert">
+        </form>
+    </div>
+    <div id="myInnerPage" style="border: 2px solid black; margin: 5px; padding: 5px;"></div>
+
+    <div style="display: -webkit-inline-box;">
+        <div>
+            <p>Canvas Area 500x300:</p>
+            <canvas id="myCanvas" style="border: 1px solid black; margin: 10px;" width="500" height="300"></canvas>
+        </div>
+        <div style="display: block; margin: 10px;">
+            <p style="white-space: pre-line">Executed code:
+                <code>var canvas = document.getElementById('myCanvas');
+var context = canvas.getContext('2d');
+            </code>
+            </p>
+            <textarea name="Text Area" id="" cols="65" rows="18">context.fillRect(10, 10, 100, 50);
+context.clearRect(10, 10, 100, 50);
+context.strokeRect(10, 10, 100, 50);
+
+context.beginPath();
+context.moveTo(100, 30);
+context.lineTo(50, 110);
+context.lineTo(150, 110);
+context.closePath();
+context.stroke();
+
+//Arcs
+context.beginPath();
+context.arc(100, 100, 50, 0, Math.PI, true); // draws a semicircle
+context.stroke();</textarea>
+        </div>
+    </div>
+
+    <script>
+        var myInnerPageElement = document.getElementById('myInnerPage');
+        var myElement = document.getElementById('myInputField');
+        var myButton = document.getElementById('myInputButton');
+        myButton.onclick = fullFillHTML;
+        var canvas = document.getElementById('myCanvas');
+        var context = canvas.getContext('2d');
+    </script>
+</body>
