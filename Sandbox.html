@@ -15,7 +15,9 @@
         }
     </style>
     <script>
-        function fullFillHTML() { myInnerPageElement.innerHTML = myElement.value; }
+
+        // function fullFillHTML() { myInnerPageElement.innerHTML = myElement.value; }
+        // function runCode() { eval(myRunCodeElement.value); }
     </script>
 </head>
 
@@ -42,7 +44,8 @@
 var context = canvas.getContext('2d');
             </code>
             </p>
-            <textarea name="Text Area" id="" cols="65" rows="18">context.fillRect(10, 10, 100, 50);
+            <!--
+            <textarea name="Text Area" id="myCodeRunInputField" cols="65" rows="18">context.fillRect(10, 10, 100, 50);
 context.clearRect(10, 10, 100, 50);
 context.strokeRect(10, 10, 100, 50);
 
@@ -57,14 +60,55 @@ context.stroke();
 context.beginPath();
 context.arc(100, 100, 50, 0, Math.PI, true); // draws a semicircle
 context.stroke();</textarea>
+            <button id="myCodeRunInputButton">RunCode</button>
+            -->
+            <form style="display: table-caption;">
+                <!--<label>JS:</label>-->
+                <textarea name="Text Area" id="myCodeDoInputField" cols="65" rows="9">
+context.reset();
+
+context.clearRect(10, 10, 100, 50);
+context.strokeRect(10, 10, 100, 50);
+
+context.beginPath();
+context.moveTo(100, 30);
+context.lineTo(50, 110);
+context.lineTo(150, 110);
+context.closePath();
+context.stroke();
+
+//Arcs
+context.beginPath();
+context.arc(100, 100, 50, 0, Math.PI, true); // draws a semicircle
+context.stroke();
+                </textarea>
+                <!--<input id="myCodeDoInputField" onclick="this.select();" type="text" size="60" value="context.reset();">-->
+                <div>
+                    <input type="button" value="Run Code" onclick="
+                    let thisTextElement = this.parentElement.parentElement.childNodes[3];
+                        eval(thisTextElement.value);">
+                    <input type="button" value=" + " onclick="
+                    let thisElement = this.parentElement.parentElement;
+                    let before = thisElement.parentElement.innerHTML;
+                    thisElement.parentElement.innerHTML = before + thisElement.outerHTML;">
+                    <input type="button" value=" - " onclick="
+                    let thisElement = this.parentElement.parentElement;
+                    thisElement.parentElement.removeChild(thisElement);">
+                </div>
+
+            </form>
         </div>
     </div>
 
     <script>
-        var myInnerPageElement = document.getElementById('myInnerPage');
-        var myElement = document.getElementById('myInputField');
-        var myButton = document.getElementById('myInputButton');
-        myButton.onclick = fullFillHTML;
+
+        // var myInnerPageElement = document.getElementById('myInnerPage');
+        // var myElement = document.getElementById('myInputField');
+        // var myButton = document.getElementById('myInputButton');
+        document.getElementById('myInputButton').onclick = () => { document.getElementById('myInnerPage').innerHTML = document.getElementById('myInputField').value; };
+        // var myRunCodeElement = document.getElementById('myCodeRunInputField');
+        // var myRunCodeButtonElement = document.getElementById('myCodeRunInputButton');
+        // document.getElementById('myCodeRunInputButton').onclick = () => { eval(document.getElementById('myCodeRunInputField').value); };
         var canvas = document.getElementById('myCanvas');
         var context = canvas.getContext('2d');
     </script>

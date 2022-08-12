@@ -6,7 +6,7 @@ myCanvas.style = 'border: solid black 1px;';
 
 var context = myCanvas.getContext('2d');
 
-myImage = document.querySelector('img[src="https://www.javascriptinstitute.org/wp-content/uploads/2018/11/canvas-api-lineJoin.png"]');
+myImage = document.querySelector('img[src="https://www.javascriptinstitute.org/wp-content/uploads/2018/11/canvas-api-translate.png"]');
 myImage.parentElement.appendChild(myCanvas);
 
 
@@ -24,3 +24,23 @@ img.onload = function() {
     context.fillRect(20, 20, 160, 110); },2000);
 }
 img.src = 'https://www.javascriptinstitute.org/files/pattern.png';
+
+
+
+context.beginPath();
+context.moveTo(0,50);
+context.lineTo(200,50);
+context.stroke();
+
+context.shadowOffsetX = 0;
+context.shadowOffsetY = 0;
+context.shadowBlur = 0;
+//context.shadowColor = 'rgba(0, 0, 0, 0.3)';
+context.strokeStyle = 'rgba(0, 0, 0, 0.9)'; 
+context.lineWidth = 1;
+context.font = '32px Open Sans';
+context.strokeText('Stroked Text', 10, 100);
+
+
+
+context.drawImage(image, 20, 40, image.width * 0.5, image.height * 0.50);
